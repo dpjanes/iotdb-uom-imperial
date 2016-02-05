@@ -10,7 +10,7 @@ Add Imperial Unit of Measure Conversions to IOTDB.
 
 Then:
 
-    $ homestar install homestar-uom-imperial
+    $ homestar install iotdb-uom-imperial
 
 # Usage
 
