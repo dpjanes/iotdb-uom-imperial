@@ -22,3 +22,6 @@
 
 "use strict";
 
+exports.setup = function(iotdb) {
+    iotdb._.convert.add(require('./distance').conversions);
+};
