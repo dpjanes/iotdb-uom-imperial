@@ -22,7 +22,7 @@
 
 "use strict";
 
-var conversions = [
+var imperial = [
     {
         from: 'iot-unit:length.imperial.feet',
         to: 'iot-unit:length.imperial.inch',
@@ -55,7 +55,11 @@ var conversions = [
     },
 ];
 
+var us = [
+];
+
 /**
  *  API
  */
-exports.conversions = conversions;
+exports.imperial = imperial;
+exports.us = us;

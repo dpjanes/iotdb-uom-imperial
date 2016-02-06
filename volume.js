@@ -22,7 +22,7 @@
 
 "use strict";
 
-var conversions = [
+var imperial = [
     {
         from: 'iot-unit:volume.imperial.cup',
         to: 'iot-unit:volume.imperial.fluid-ounce',
@@ -48,7 +48,24 @@ var conversions = [
         to: 'iot-unit:volume.si.liter',
         multiply: 0.56826125,
     },
+    {
+        from: 'iot-unit:volume.imperial.tablespoon',
+        to: 'iot-unit:volume.imperial.teaspoon',
+        multiply: 3,
+    },
+    {
+        from: 'iot-unit:volume.imperial.cup',
+        to: 'iot-unit:volume.imperial.tablespoon',
+        multiply: 16,
+    },
+    {
+        from: 'iot-unit:volume.imperial.quart',
+        to: 'iot-unit:volume.imperial.cup',
+        multiply: 4,
+    },
+];
 
+var us = [
     // US 
     {
         from: 'iot-unit:volume.us.cup',
@@ -80,5 +97,25 @@ var conversions = [
         to: 'iot-unit:volume.si.liter',
         multiply: .473176473,
     },
+    {
+        from: 'iot-unit:volume.us.tablespoon',
+        to: 'iot-unit:volume.us.teaspoon',
+        multiply: 3,
+    },
+    {
+        from: 'iot-unit:volume.us.cup',
+        to: 'iot-unit:volume.us.tablespoon',
+        multiply: 16,
+    },
+    {
+        from: 'iot-unit:volume.us.quart',
+        to: 'iot-unit:volume.us.cup',
+        multiply: 4,
+    },
 ];
 
+/**
+ *  API
+ */
+exports.imperial = imperial;
+exports.us = us;

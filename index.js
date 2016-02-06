@@ -23,6 +23,8 @@
 "use strict";
 
 exports.setup = function(iotdb) {
-    iotdb._.convert.add(require('./distance').conversions);
-    iotdb._.convert.add(require('./volume').conversions);
+    iotdb._.convert.add(require('./distance').imperial);
+    iotdb._.convert.add(require('./distance').us);
+    iotdb._.convert.add(require('./volume').imperial);
+    iotdb._.convert.add(require('./volume').us);
 };
