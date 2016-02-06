@@ -24,4 +24,5 @@
 
 exports.setup = function(iotdb) {
     iotdb._.convert.add(require('./distance').conversions);
+    iotdb._.convert.add(require('./volume').conversions);
 };
