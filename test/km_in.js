@@ -27,9 +27,17 @@ const _ = require("iotdb-helpers")
 const imperial = require("..")
 imperial.load()
 
-const inches = _.convert.convert({
-    from: 'iot-unit:length.si.meter.3', // m * 10^3 = km
-    to: 'iot-unit:length.imperial.inch',
-    value: 1
-});
-console.log(inches);
+const assert = require("assert")
+
+describe("km_in", function() {
+    it("works", function() {
+        const expected = 39370;
+        const actual = _.convert.convert({
+            from: 'iot-unit:length.si.meter.3', // m * 10^3 = km
+            to: 'iot-unit:length.imperial.inch',
+            value: 1
+        });
+
+        assert.deepEqual(actual, expected)
+    })
+})

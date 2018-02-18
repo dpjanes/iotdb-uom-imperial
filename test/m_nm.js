@@ -1,5 +1,5 @@
 /*
- *  samples/y_in.js
+ *  samples/m_nm.js
  *
  *  David Janes
  *  IOTDB.org
@@ -27,9 +27,17 @@ const _ = require("iotdb-helpers")
 const imperial = require("..")
 imperial.load()
 
-const inches = _.convert.convert({
-    from: 'iot-unit:length.imperial.yard',
-    to: 'iot-unit:length.imperial.inch',
-    value: 1
-});
-console.log(inches);
+const assert = require("assert")
+
+describe("m_nm", function() {
+    it("works", function() {
+        const expected = 0.54;
+        const actual = _.convert.convert({
+            from: 'iot-unit:length.si.meter',
+            to: 'iot-unit:length.imperial.nautical-mile',
+            value: 1000,
+        });
+
+        assert.deepEqual(actual, expected)
+    })
+})
