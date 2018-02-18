@@ -5,7 +5,7 @@
  *  IOTDB.org
  *  2016-02-04
  *
- *  Copyright [2013-2016] [David P. Janes]
+ *  Copyright [2013-2018] [David P. Janes]
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -22,9 +22,19 @@
 
 "use strict";
 
-exports.setup = function(iotdb) {
-    iotdb._.convert.add(require('./distance').imperial);
-    iotdb._.convert.add(require('./distance').us);
-    iotdb._.convert.add(require('./volume').imperial);
-    iotdb._.convert.add(require('./volume').us);
-};
+/**
+ *  Add to IOTDB
+ */
+const load = () => {
+    const _ = require("iotdb-helpers")
+
+    _.convert.add(require('./distance').imperial);
+    _.convert.add(require('./distance').us);
+    _.convert.add(require('./volume').imperial);
+    _.convert.add(require('./volume').us);
+}
+
+/**
+ *  API
+ */
+exports.load = load;

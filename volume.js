@@ -5,7 +5,7 @@
  *  IOTDB.org
  *  2016-02-05
  *
- *  Copyright [2013-2016] [David P. Janes]
+ *  Copyright [2013-2018] [David P. Janes]
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@
 
 "use strict";
 
-var imperial = [
+const imperial = [
     {
         from: 'iot-unit:volume.imperial.cup',
         to: 'iot-unit:volume.imperial.fluid-ounce',
@@ -65,7 +65,7 @@ var imperial = [
     },
 ];
 
-var us = [
+const us = [
     // US 
     {
         from: 'iot-unit:volume.us.cup',
